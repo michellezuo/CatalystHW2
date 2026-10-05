@@ -7,7 +7,6 @@ scikit-learn Random Forest classifier.
 ## How to run
 
 ```bash
-cd /Users/colinzeng/CatalystHW2/CatalystHW2
 python3 -m venv .venv                      # first time only
 .venv/bin/pip install -r requirements.txt  # first time only
 .venv/bin/python model.py
