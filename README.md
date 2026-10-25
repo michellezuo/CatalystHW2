@@ -4,19 +4,6 @@ Predicts whether an online shopping session ends in a purchase (`Revenue`) using
 Online Shoppers Purchasing Intention dataset (`online_shoppers_intention.csv`) and a
 scikit-learn Random Forest classifier.
 
-## How to run
-
-```bash
-python3 -m venv .venv                      # first time only
-.venv/bin/pip install -r requirements.txt  # first time only
-.venv/bin/python model.py
-```
-
-The script prints the metrics to the terminal, opens a ROC curve window, and saves the
-plot to `roc_curve.png`.
-
-## What we did
-
 ### 1. Preprocessing (already in `model.py`)
 - **Duplicates:** removed 125 exact duplicate rows (12,330 → 12,205), so the same session
   can't end up in both train and test.
