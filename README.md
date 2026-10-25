@@ -4,7 +4,7 @@ Predicts whether an online shopping session ends in a purchase (`Revenue`) using
 Online Shoppers Purchasing Intention dataset (`online_shoppers_intention.csv`) and a
 scikit-learn Random Forest classifier.
 
-### 1. Preprocessing (already in `model.py`)
+### 1. Preprocessing 
 - **Duplicates:** removed 125 exact duplicate rows (12,330 → 12,205), so the same session
   can't end up in both train and test.
 - **Month:** mapped to 1–12 to keep its natural order (the data spells June out as `"June"`).
@@ -21,13 +21,13 @@ applied to the test data. The steps that run before the split (removing duplicat
 months, converting `Weekend`) work row by row and learn nothing from the data, so no test
 information reaches the model. No changes were needed.
 
-### 2. Random Forest model (added)
+### 2. Random Forest model 
 - `RandomForestClassifier(random_state=42)` with all other settings at scikit-learn's
   defaults (100 trees, gini criterion, no depth limit). No hyperparameter tuning.
 - Fit on the training data only, then used to predict labels and class probabilities for
   the test set.
 
-### 3. Evaluation (added)
+### 3. Evaluation 
 - The script decides whether the task is binary or multiclass from the model's classes.
   This dataset is **binary**, and the positive class is `1` (the session ended in a purchase).
 - Precision, recall and F1 are calculated for the positive class with `zero_division=0`.
@@ -71,7 +71,7 @@ weighted avg       0.90      0.90      0.90      2441
 
 ![ROC curve](roc_curve.png)
 
-## What the results mean
+## Discussion
 
 - **Ranking is strong:** a ROC-AUC of 0.92 means the model usually scores real purchasers
   above non-purchasers.
